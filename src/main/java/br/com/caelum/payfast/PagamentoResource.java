@@ -18,7 +18,14 @@ import javax.ws.rs.core.Response;
 import br.com.caelum.payfast.modelo.Pagamento;
 import br.com.caelum.payfast.modelo.Transacao;
 import br.com.caelum.payfast.repository.RepositorioDePagamentos;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+import io.swagger.annotations.ResponseHeader;
 
+@Api
 @Path("/pagamentos")
 public class PagamentoResource {
 
