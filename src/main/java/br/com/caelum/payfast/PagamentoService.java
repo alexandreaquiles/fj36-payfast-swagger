@@ -28,6 +28,7 @@ public class PagamentoService extends Application {
 	@Override
 	public Set<Class<?>> getClasses() {
 		Set<Class<?>> resources = new HashSet<>();
+		resources.add(JacksonJavaTimeConfiguration.class);
 		resources.add(PagamentoResource.class);
 		resources.add(ApiListingResource.class);
 		resources.add(SwaggerSerializers.class);

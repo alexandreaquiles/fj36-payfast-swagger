@@ -1,19 +1,20 @@
 package br.com.caelum.payfast.modelo;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class Transacao {
 
 	private String codigo;
 	private String titular;
-	private String data;
+	private LocalDate data;
 	private BigDecimal valor;
 
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 	
-	public void setData(String data) {
+	public void setData(LocalDate data) {
 		this.data = data;
 	}
 
@@ -33,7 +34,7 @@ public class Transacao {
 		return titular;
 	}
 
-	public String getData() {
+	public LocalDate getData() {
 		return data;
 	}
 
