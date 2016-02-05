@@ -39,9 +39,28 @@ public class PagamentoResource {
 		return repositorio.busca(id);
 	}
 
+	@ApiOperation(
+		value = "Cria novo pagamento", 
+		consumes = MediaType.APPLICATION_JSON, 
+		produces = MediaType.APPLICATION_JSON)
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response criarPagamento(Transacao transacao) throws URISyntaxException {
+	@ApiResponses(
+		@ApiResponse(
+			code=201,
+			message="Novo pagamento criado",
+			response = Pagamento.class, 
+			responseHeaders=
+				@ResponseHeader(
+					name="Location", 
+					description="uri do novo pagamento",
+					response=String.class)))
+	public Response criarPagamento(
+			@ApiParam(
+				value="Transação", 
+				name="transacao", 
+				required=true)
+			Transacao transacao) throws URISyntaxException {
 		Pagamento pagamento = new Pagamento();
 		pagamento.setValor(transacao.getValor());
 		pagamento.comStatusCriado();
