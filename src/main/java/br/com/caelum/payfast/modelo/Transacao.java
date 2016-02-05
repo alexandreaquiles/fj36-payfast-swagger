@@ -4,15 +4,15 @@ import java.math.BigDecimal;
 
 public class Transacao {
 
-	private String numero;
+	private String codigo;
 	private String titular;
 	private String data;
 	private BigDecimal valor;
 
-	public void setNumero(String numero) {
-		this.numero = numero;
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
-
+	
 	public void setData(String data) {
 		this.data = data;
 	}
@@ -24,9 +24,9 @@ public class Transacao {
 	public void setTitular(String titular) {
 		this.titular = titular;
 	}
-	
-	public String getNumero() {
-		return numero;
+
+	public String getCodigo() {
+		return codigo;
 	}
 
 	public String getTitular() {
@@ -43,7 +43,7 @@ public class Transacao {
 
 	@Override
 	public String toString() {
-		return "Transacao [numero=" + numero + ", titular=" + titular + ", data=" + data + ", valor=" + valor + "]";
+		return "Transacao [codigo=" + codigo + ", titular=" + titular + ", data=" + data + ", valor=" + valor + "]";
 	}
 
 }
