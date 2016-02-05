@@ -72,6 +72,11 @@ public class PagamentoResource {
 	@PUT
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
+	@ApiResponses(
+			@ApiResponse(
+				code=200,
+				message="Pagamento confirmado",
+				response = Pagamento.class))
 	public Response confirmarPagamento(@PathParam("id") Integer pagamentoId) {
 		Pagamento pagamento = repositorio.busca(pagamentoId);
 		pagamento.comStatusConfirmado();
@@ -81,6 +86,11 @@ public class PagamentoResource {
 	@DELETE
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
+	@ApiResponses(
+			@ApiResponse(
+				code=200,
+				message="Pagamento cancelado",
+				response = Pagamento.class))
 	public Response cancelarPagamento(@PathParam("id") Integer pagamentoId) {
 		Pagamento pagamento = repositorio.busca(pagamentoId);
 		pagamento.comStatusCancelado();
