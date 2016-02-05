@@ -13,10 +13,6 @@ public class Pagamento {
 	private BigDecimal valor;
 
 	public void comStatusCriado() {
-		if (this.id == null) {
-			throw new IllegalArgumentException("id do pagamento deve existir");
-		}
-
 		this.status = STATUS_CRIADO;
 	}
 
